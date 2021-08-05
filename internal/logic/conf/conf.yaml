@@ -1,0 +1,21 @@
+http:
+  Addr: "127.0.0.1:9000"
+  ReadTimeout: 1s
+  WriteTimeout: 1s
+  MaxHeaderBytes: 1 << 20
+
+data:
+  database:
+    dsn: root:pg719@1996@tcp(139.9.141.27:3306)/im?charset=utf8mb4&parseTime=True&loc=Local
+    drive: mysql
+  redis:
+    Addr: 127.0.0.1:6379
+    Password:
+    DB: 0
+    DialTimeout: 1s
+    WriteTimeout: 0.4s
+    ReadTimeout:  0.6s
+  nsq:
+    Addr: 127.0.0.1:4150
+
+

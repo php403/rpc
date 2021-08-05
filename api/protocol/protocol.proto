@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package protocol;
+
+option go_package = "github.com/php403/im/api/protocol";
+
+/*
+ * v1.0.0
+ * protocol
+ */
+message Proto {
+    uint32 ver = 1;
+    uint32 op = 2;
+    uint32 seq = 3;
+    bytes body = 4;
+}
+
+
