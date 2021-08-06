@@ -12,6 +12,7 @@ import (
 	"math/rand"
 	"time"
 )
+//go run main.go wire_gen.go  -conf /root/im/internal/logic/conf/
 
 const (
 	minServerHeartbeat = time.Minute * 10
@@ -80,7 +81,7 @@ func newLogicClient(c *conf.RPCClient) logic.LogicClient {
 	if err!= nil {
 		panic(err)
 	}*/
-	conn, err := grpc.DialContext(ctx, "172.17.0.11:9001",
+	conn, err := grpc.DialContext(ctx, "172.18.180.79:9001",
 		[]grpc.DialOption{
 			grpc.WithInsecure(),
 			//grpc.WithResolvers(etcdResolver),

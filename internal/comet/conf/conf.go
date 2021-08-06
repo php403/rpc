@@ -100,7 +100,7 @@ func Default() *Config {
 		},
 		Nsq: &Nsq{
 			Topic: "gameImcomet1",
-			Addr:"172.17.0.16:4150",
+			Addr:"172.18.180.81:4150",
 		},
 	}
 }

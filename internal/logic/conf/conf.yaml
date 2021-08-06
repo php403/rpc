@@ -16,6 +16,6 @@ data:
     WriteTimeout: 0.4s
     ReadTimeout:  0.6s
   nsq:
-    Addr: 127.0.0.1:4150
+    Addr: 172.18.180.81:4150
 
 
