@@ -27,7 +27,7 @@ func NewNsq(c *conf.Nsq) *Nsq {
 	if nil != err {
 		panic(err)
 	}
-	msgChan := make(chan *nsq.Message,1027)
+	msgChan := make(chan *nsq.Message,1024)
 	nsq1 := &Nsq{c.Topic,consumer,msgChan}
 	consumer.AddHandler(nsq1)
 	err = consumer.ConnectToNSQD(c.Addr)
