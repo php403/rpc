@@ -124,7 +124,12 @@ func startClient(ctx context.Context,uid int64) {
 	if err = tcpWriteProto(wr, proto); err != nil {
 		_ = fmt.Errorf("tcpWriteProto() error(%v)", err)
 	}
-	for err = tcpReadProto(rd, proto); err != nil;{
+	for {
+		if err = tcpReadProto(rd, proto); err != nil  {
+			fmt.Println("auth error!")
+			fmt.Println(err)
+			return
+		}
 		if proto.Operation == opAuthReply {
 			fmt.Println(string(proto.Body))
 			break
