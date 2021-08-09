@@ -121,6 +121,7 @@ func startClient(ctx context.Context,uid int64) {
 	proto.Operation = opAuth
 	proto.Seq = seq
 	proto.Body,_ = json.Marshal(userToken)
+	fmt.Println("到这了")
 	if err = tcpWriteProto(wr, proto); err != nil {
 		_ = fmt.Errorf("tcpWriteProto() error(%v)", err)
 	}
