@@ -134,7 +134,7 @@ func startClient(ctx context.Context,uid int64) {
 			fmt.Println(string(proto.Body))
 			break
 		}
-		fmt.Println(err)
+		fmt.Println("到这了")
 	}
 
 	go func() {
