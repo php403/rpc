@@ -139,7 +139,7 @@ func startClient(ctx context.Context,uid int64) {
 					glog.Errorf("key:%d tcpWriteProto() error(%v)", err.Error())
 					return
 				}
-				time.Sleep(time.Nanosecond*1)
+				time.Sleep(time.Millisecond*200)
 			}
 		}
 	}()
@@ -157,18 +157,6 @@ func startClient(ctx context.Context,uid int64) {
 					return
 				}
 				atomic.AddInt64(&countDown, 1)
-				/*if proto.Operation == opAuthReply {
-					glog.Infof("key:%d auth success", uid)
-				} else if proto.Operation == opHeartbeatReply {
-					glog.Infof("key:%d receive heartbeat", uid)
-					if err = conn.SetReadDeadline(time.Now().Add(heart + 60*time.Second)); err != nil {
-						glog.Errorf("conn.SetReadDeadline() error(%v)", err)
-						return
-					}
-				} else {
-					glog.Infof("key:%d op:%d msg: %s", uid, proto.Operation, string(proto.Body))
-					atomic.AddInt64(&countDown, 1)
-				}*/
 			}
 		}
 	}()
